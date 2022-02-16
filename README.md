@@ -2,7 +2,7 @@
 
 ## 2022/02/16
 
-- View
+- ### **View**
  
 웹 클라이언트(브라우저)에서 요청이 전달되면 알맞는 서비스 로직을 수행하고, 그 결과를 직접 응답하거나 템플릿을 통해서 응답한다. 파이썬 함수 또는 클래스로 구현하는데 함수로 구현한다.
 
@@ -24,7 +24,7 @@ Post 방식 요청: request.Post
 cf) request.GET['name'] => key값 없으면 오류난다. / request.GET.get(key, default value) => 없으면 none을 return 한다.
 
 
-- Template
+- ### **Template**
 
 HTML, CSS, Javascript로 작성한다. 장고에서 제공하는 구문을 이용해서 동적인 처리를 구현할 수 있다.
 
