@@ -33,3 +33,11 @@ HTML, CSS, Javascript로 작성한다. 장고에서 제공하는 구문을 이�
 Server : 장고의 템플릿 변수, 장고의 템플릿 태크
 
 Client : javascript 사용
+
+
+- ### **Http 요청 방식(method)**
+  - 기본 요청 방식: GET
+  - 브라우저에서 URL 문자열을 입력해서 요청: GET
+  - GET 방식으로 요청할 때는 Query 문자열 없이 요청할 수도 있고, Query 문자열을 전달하면서 요청할 수도 있다.
+  - Query 문자열을 전달하면서 GET 방식으로 요청할 때의 제한사항을 보안하기 위해서 POST 요청 방식이 추가되었다.
+
