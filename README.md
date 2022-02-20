@@ -94,3 +94,28 @@ ex) 캡차
 - ### Ajax 함수 구현
 Ajax 통신에 대한 응답이 왔을 때 수행하게 되는 기능을 구현한다. 서버로 부터 응답되는 형식(일반 텍스트, HTML, XML, JSON, 이미지...)에 따라 구현 방법이 좀 달라진다.
 req.responseText를 사용해서 응답된 내용을 읽는다. Json 응답일 때는 JSON.parse()를 사용해서 JS객체로 생성하여 사용한다.
+ 
+ ## 2022/02/20
+ 
+ - ### 사용자 정의 template tag 만들기
+ 1. templatetags라는 파일을 만든다.(__init__파일 자동생성)
+ 2. tag를 정의할 index.py를 만든다.(이름은 임의로 정한다.)
+ 3. 아래와 같은 함수를 정의한다.(list가 넘어오면 index접근을 가능하게 하기위한 함수이다.)
+ 
+```python
+ from django import template
+
+register = template.Library()
+
+@register.filter
+def index(indexable, i):
+    return indexable[i]
+ ```
+ 4. template에 아래와 같이 작성한다.
+ ```html
+ {% load index %}
+ <a href="{{ urls|index:forloop.counter0 }}">
+     <li style="list-style-type:none;"><img src="{{ images|index:forloop.counter0 }}" class="slide_content slide0{{forloop.counter}}" alt=""></li>
+ </a>
+ ```
+ 
