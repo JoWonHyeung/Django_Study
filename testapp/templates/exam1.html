@@ -6,44 +6,18 @@
     <link rel="stylesheet" href="/static/CSS/style.css">
 </head>
 <body>
-<!--  <div class="container">-->
-<!--    <div class="album">-->
-<!--      <div class="images">-->
-<!--        &lt;!&ndash;원하는 이미지 주소값을 입력해주세요&ndash;&gt;-->
-<!--        {% for image in images %}-->
-<!--            <li><img src="{{image}}" alt=""></li>-->
-<!--        {% endfor %}-->
-<!--        &lt;!&ndash;슬라이드에 넣길 원하는 이미지 수만큼 img 코드를 추가해주세요&ndash;&gt;-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <button class="previous"> 이전</button>  &lt;!&ndash;이전 버튼에 들어갈 문구를 작성해주세요&ndash;&gt;-->
-<!--    <button class="next"> 다음</button>    &lt;!&ndash;다음 버튼에 들어갈 문구를 작성해주세요&ndash;&gt;-->
-<!--  </div>-->
-<!--  <script src="/static/JS/slideShow.js"></script>-->
 
 <h1>Carousel Project</h1>
 <div id="container">
     <div class="slide_wrap">
         <div class="slide_box">
             <div class="slide_list clearfix">
-                {% for image in images %}
-                <li style="list-style-type:none;"><img src="{{image}}" class="slide_content slide0{{forloop.counter}}" alt=""></li>
+                {% for _ in n %}
+                {% load index %}
+                <a href="{{ urls|index:forloop.counter0 }}">
+                    <li style="list-style-type:none;"><img src="{{ images|index:forloop.counter0 }}" class="slide_content slide0{{forloop.counter}}" alt=""></li>
+                </a>
                 {% endfor %}
-<!--                <div class="slide_content slide01">-->
-<!--                    <p>1</p>-->
-<!--                </div>-->
-<!--                <div class="slide_content slide02">-->
-<!--                    <p>2</p>-->
-<!--                </div>-->
-<!--                <div class="slide_content slide03">-->
-<!--                    <p>3</p>-->
-<!--                </div>-->
-<!--                <div class="slide_content slide04">-->
-<!--                    <p>4</p>-->
-<!--                </div>-->
-<!--                <div class="slide_content slide05">-->
-<!--                    <p>5</p>-->
-<!--                </div>-->
             </div>
             <!-- // .slide_list -->
         </div>

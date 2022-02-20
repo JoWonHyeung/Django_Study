@@ -21,36 +21,37 @@ let curSlide = slideContents[curIndex]; // current slide dom
 curSlide.classList.add('slide_active');
 /** Next Button Event */
 slideBtnNext.addEventListener('click', function() {
-if (curIndex <= slideLen - 1) {
-slideList.style.transition = slideSpeed + "ms";
-slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
-}
-if (curIndex === slideLen - 1) {
-setTimeout(function() {
-slideList.style.transition = "0ms";
-slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
-}, slideSpeed);
-curIndex = -1;
-}
-curSlide.classList.remove('slide_active');
-curSlide = slideContents[++curIndex];
-curSlide.classList.add('slide_active');
+    if (curIndex <= slideLen - 1) {
+        slideList.style.transition = slideSpeed + "ms";
+        slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+    }
+    if (curIndex === slideLen - 1) {
+        setTimeout(function() {
+            slideList.style.transition = "0ms";
+            slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+        }, slideSpeed);
+        curIndex = -1;
+    }
+    curSlide.classList.remove('slide_active');
+    curSlide = slideContents[++curIndex];
+    curSlide.classList.add('slide_active');
 });
+
 /** Prev Button Event */
 slideBtnPrev.addEventListener('click', function() {
-if (curIndex >= 0) {
-slideList.style.transition = slideSpeed + "ms";
-slideList.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
-}
-if (curIndex === 0) {
-setTimeout(function() {
-slideList.style.transition = "0ms";
-slideList.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
-}, slideSpeed);
-curIndex = slideLen;
-}
-curSlide.classList.remove('slide_active');
-curSlide = slideContents[--curIndex];
-curSlide.classList.add('slide_active');
+    if (curIndex >= 0) {
+        slideList.style.transition = slideSpeed + "ms";
+        slideList.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
+    }
+    if (curIndex === 0) {
+        setTimeout(function() {
+        slideList.style.transition = "0ms";
+        slideList.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
+        }, slideSpeed);
+    curIndex = slideLen;
+    }
+    curSlide.classList.remove('slide_active');
+    curSlide = slideContents[--curIndex];
+    curSlide.classList.add('slide_active');
 });
 
