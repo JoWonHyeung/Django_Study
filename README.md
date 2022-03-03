@@ -119,3 +119,12 @@ def index(indexable, i):
  </a>
  ```
  
+ 
+ ## 2022/03/04
+ 
+ - ### 한글명 첨부파일을 강제 다운로드 시키기
+ 유니코드 파일명인 경우(예를 들어, 한글명 파일)는 따로 처리를 해줘야 한다. 강제 다운로드의 핵심은 Content-Disposition 헤더에 'attachment;'를 추가 해주는 것이다.
+ ```python
+filename_header = ‘filename*=UTF-8\’\’%s’ % urllib.quote(filename.encode(‘utf-8’))
+response[‘Content-Disposition’] = ‘attachment; ‘ + filename_header
+ ```
