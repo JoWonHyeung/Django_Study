@@ -128,3 +128,9 @@ def index(indexable, i):
 filename_header = ‘filename*=UTF-8\’\’%s’ % urllib.quote(filename.encode(‘utf-8’))
 response[‘Content-Disposition’] = ‘attachment; ‘ + filename_header
  ```
+
+ ## 2022/03/11
+ 
+ - ### DB 모델 생성 안 될때 
+ 
+ https://velog.io/@haileeyu21/Error-dJango-migrate-%ED%96%88%EB%8A%94%EB%8D%B0-No-migrations-to-apply-%EC%9D%BC-%EA%B2%BD%EC%9A%B0
